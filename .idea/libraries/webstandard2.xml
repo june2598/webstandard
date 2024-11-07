@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="webstandard2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Interactive_Web_Page-main.zip!/" />
+      <root url="jar://$PROJECT_DIR$/javascript.zip!/" />
+      <root url="jar://$PROJECT_DIR$/day6.zip!/" />
+      <root url="jar://$PROJECT_DIR$/test.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

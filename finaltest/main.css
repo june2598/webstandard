@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+*{
+    /* outline: 1px solid red; */
+    list-style-type: none;
+    margin: 0;
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.wrap .membership{
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    width: 100%;
+    height: 50px;
+}
+.wrap .membership .membership_inner{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 600px;
+    padding: 0 10px;
+}
+
+.wrap .membership .membership_inner>li{
+    padding: 0 5px;
+}
+.wrap .membership .membership_inner>li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.wrap .image .image_inner{
+    display: flex;
+    
+    width: 600px;
+    height: 150px;  
+}
+
+.wrap .main_menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 600px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    font-size: 0.8rem;
+}
+.wrap .main_menu>li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.wrap .main{
+    display: flex;
+    width: 600px;
+    background-color:lightskyblue;
+    justify-content: flex-end;
+}
+
+.wrap .main .wrap-form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    background-color: lightcyan;
+}
+
+.col.col1{
+    display: block;
+    font-weight: bold;
+}
+
+.wrap .main .wrap-form .form_title{
+    letter-spacing: 0.5em;
+    margin: 10px;
+    text-align: center;
+}
+.wrap .main .wrap-form .form_body{
+    box-sizing: border-box;
+    width: 250px;
+    padding: 10px;
+    background-color: white;
+    font-size: 0.8rem;
+}
+
+.wrap .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: bold;
+    width: 600px;
+    height: 70px;
+}
+
+.col.col2,
+.birthday{
+  width: 100%;
+}
+
+.birthday{
+    margin-bottom: 15px;
+}
+.inner_join>input.mybtn{
+    padding: 5px;
+    background-color: green;
+    text-align: center;
+    letter-spacing: 5px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    border: none;
+}
+.inner_join>input.mybtn:hover{
+    cursor: pointer;
+}
+
+

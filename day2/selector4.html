@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성으로 요소 지정하기</title>
+    <style>
+        [type]{
+            background-color: yellow;
+        }
+
+        body form div input[type='password']{
+            background-color: lightblue;
+        }
+
+        form div input[type='password']{
+            background-color: pink;
+        }
+        input[type='password']{
+            background-color: blue;
+        }
+        [type='password']{
+            background-color: green;
+        }
+        p:hover{
+            background-color: lightcoral;
+        }
+        p:active{
+            background-color: violet;
+        }
+        :root{
+            background-color: lightcyan;
+        }
+    </style>
+</head>
+<body>
+    <p>로그인</p>
+    <form action="">
+        <div>
+       <div><label for="">라벨명1</label><input type="text"></div>
+       <div><label for="">라벨명2</label><input type="password"></div>
+       <div><label for="">라벨명3</label><input type="file"></div>
+
+    
+    </form>
+    
+</body>
+</html>

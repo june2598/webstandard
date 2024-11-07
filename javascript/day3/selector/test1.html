@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <script>
+        /*1) item1 요소를 타게팅하고 전경색을 파란색으로 스타일주기 */
+        const blueEle = window.document.querySelector('li:nth-of-type(1)');
+        blueEle.style.color = 'blue';
+        /*2) 모든 li요소를 타게팅해서 배경색을 노란색으로 스타일주기 */
+        const yellowEles = document.querySelectorAll('li');
+
+        /*향상된 ~ */
+        // for(let yellowEle of yellowEles){
+        //     yellowEle.style.backgroundColor = 'yellow';
+        // }
+
+        /*일반 for */
+        for (let i = 0; i < yellowEles.length; i++) {
+            yellowEles[i].style.backgroundColor = 'yellow';
+        }
+
+
+    </script>
+</body>
+
+</html>

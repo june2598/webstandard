@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- inline 방식 : javascript코드를 on+이벤트이름 속성값에 대입-->
+    <button onclick="window.alert('hi');
+        window.console.log('안녕');
+        window.document.querySelector('body').style.backgroundColor='yellow';">클릭</button>
+    <!-- window, globalThis 생략가능-->
+
+
+    <!--inline+internal-->
+    <button onclick="f();">클릭2</button>
+
+
+    <!--internal-->
+    <button id="btn3">클릭3</button>
+
+    <script>
+        function f() {
+            window.alert('hi');
+            window.console.log('안녕');
+            window.document.querySelector('body').style.backgroundColor = 'yellow';
+        }
+
+        const btn3Ele = window.document.querySelector('#btn3');      
+        btn3Ele.addEventListener('click',function(){
+            f();
+        });
+</script>
+</body>
+
+</html>

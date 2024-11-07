@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            /* outline: 1px solid red; */
+        }
+
+        .uppermost,
+        .header,
+        .nav,
+        .main,
+        .footer_menu,
+        .footer{
+            display: flex;
+            justify-content: center;
+        }
+
+        .uppermost{
+            background-color: #400346;
+        }
+        .header{
+            background-color: #8f0c88;
+        }
+        .nav{
+            background-color: #a010bd;
+        }
+        .main{
+            background-color: #a6d8cd;
+        }
+        .footer_menu{
+        background-color: #c454ce;
+        }
+        .footer{
+            background-color: #d8b7d8;
+        }
+        .inner {
+            display: flex;
+            width:800px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .uppermost_inner,
+        .footer_menu_inner
+        .nav
+        {
+            height: 40px;
+        }
+        .header_inner,
+        .footer{
+            height: 100px;
+        }
+
+        .main_inner{
+            box-sizing: border-box;
+            border: 5px solid black;
+            display: flex;
+            height: 300px;
+            align-items: stretch;
+        }
+        .main_inner .content{
+            display: flex;
+            background-color: #011a0b;
+            flex-grow: 6;
+            justify-content: center;
+            align-items: center;
+        }
+        .main_inner .sidebanner{
+            display: flex;
+            background-color: #4a388a;
+            flex-grow: 2;
+            justify-content: center;
+            align-items: center;
+        }
+        .main_inner .sidemenu{
+            display: flex;
+            background-color: #215c38;
+            flex-grow: 2;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .uppermost_inner{
+            background-color: #7c047c;
+        }
+        .header_inner{
+            background-color: #960c78;   
+        }
+        .nav_inner{
+            background-color: #b40cd4;
+        }
+        .footer_menu_inner{
+            background-color: #d16ce6;
+        }
+        .footer_inner{
+            background-color: #e5d0e9;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="uppermost">
+            <div class="inner uppermost_inner"><span>uppermost</span></div>
+        </div>
+        <div class="header">
+            <div class="inner header_inner"><span>header</span></div>
+        </div>
+        <div class="nav">
+            <div class="inner nav_inner"><span>nav</span></div>
+        </div>
+        <div class="main">
+            <div class="inner main_inner"><div class="content"><span>content</span></div>
+            <div class="sidebanner"><span>sidebanner</span></div>
+            <div class="sidemenu"><span>sidemenu</span></div></div>
+        </div>
+        <div class="footer_menu">
+            <div class="inner footer_menu_inner"><span>footermenu</span></div>
+        </div>
+        <div class="footer">
+            <div class="inner footer_inner"><span>footer</span></div>
+        </div>
+    </div>
+</body>
+</html>

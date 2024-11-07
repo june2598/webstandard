@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-sizing 예제</title>
+    <style>
+        .box1 {
+            box-sizing: content-box; /* 기본값 */
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            background-color: lightblue;
+            margin-bottom: 20px;
+        }
+
+        .box2 {
+            box-sizing: border-box; /* 패딩과 테두리를 포함 */
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 5px solid black;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Box-sizing 속성 예제</h1>
+
+<div class="box1">content-box</div>
+<div class="box2">border-box</div>
+
+</body>
+</html>

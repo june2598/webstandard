@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #c2{
+            background-color: green;
+        }
+        .c1 .c2 {
+            background-color: yellow;
+        }
+        li#item1{
+            color: blue;
+        }
+        #item32{
+            color: red;
+        }
+        ul,ol{
+            background-color: pink;
+        }
+
+        ol li {
+            background-color: yellow;
+        }
+
+        ol li {
+            background-color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul class="c1">
+        <li class="c3" id="item1">item1</li>
+        <li>item2</li>
+        <li>item3
+            <ul class="c2" id="c2">
+                <li>item3-1</li>
+                <li id="item32">item3-2</li>
+                <li>item3-3</li>
+            </ul>
+        </li>
+    </ul>
+    <ol>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ol>
+</body>
+</html>

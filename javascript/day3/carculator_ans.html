@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div><input type="text" id="op1"> + <input type="text" id="op2"> = <input type="text" id="result"></div>
+    <div><button>계산</button></div>
+
+    <script>
+        const btnEle = document.querySelector('button');
+        const h_click = function(evt){
+            console.log(evt);
+            const op1Ele = document.getElementById('op1');
+            const op2Ele = document.getElementById('op2');
+            const result = document.getElementById('result');
+            console.log(op1Ele.value,op2Ele.value);
+            console.log(typeof(op1Ele.value));
+            result.value = parseInt(op1Ele.value) + parseInt(op2Ele.value);
+        }
+        btnEle.addEventListener('click',h_click,false);
+    </script>
+</body>
+
+</html>

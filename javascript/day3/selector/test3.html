@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">아이디</label><input type="text">
+    <button>클릭</button>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+
+    <script>
+        const btnEle = document.querySelector('button');
+        btnEle.addEventListener('click', f);
+
+        function f() {
+            const labelEle = document.querySelector('label');
+
+            if (labelEle.style.color === 'red') {
+                labelEle.style.color = '';
+                labelEle.style.backgroundColor = '';
+            }else{
+                labelEle.style.color = 'red';
+                labelEle.style.backgroundColor = 'yellow';
+            }
+        }
+
+        const idEle = document.querySelector("input[type='text']");
+        idEle.addEventListener('keydown',function(evt){
+            console.log(evt);
+            console.log(evt.target); //이벤트가 발생된 요소. 결과적으로 console.log(idEle)와 같음
+            console.log(idEle);
+            console.log(evt.currentTarget);  //이벤트 핸들러가 적용되는 요소. 결과적으로 console.log(idEle)와 같음
+            
+        })
+
+        const ulEle = document.querySelector('ul');
+        ulEle.addEventListener('click',function(e){
+            console.log('버블단계');
+            console.log(e.target)           // li
+            console.log(e.currentTarget)    // ul
+        },false);
+      
+        // ulEle.addEventListener('click',function(e){
+        //     console.log('캡처단계');
+        // },true);
+        
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

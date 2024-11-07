@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* {
+    /* outline: 1px solid red; */
+}
+
+/*css reset*/
+body {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrap .container {
+    display: flex;
+    justify-content: center;
+}
+
+/* top*/
+
+.wrap .container.menu_top-wrap{
+    height: 50px;
+    background-color: #111;
+}
+
+.wrap .container.menu_top-wrap .inner.menu_top{
+    display: flex;
+    justify-content: flex-end;
+}
+.wrap .container.menu_top-wrap .inner.menu_top .menu_items{
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.wrap .container.menu_top-wrap .inner.menu_top .menu_items .menu_item{
+    padding: 0 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+
+
+/*banner*/
+.wrap .container.banner-wrap{
+    height: 150px;
+}
+.wrap .container.banner-wrap .inner.banner{
+    background-image:url('https://media.istockphoto.com/id/1722480489/ko/%EC%82%AC%EC%A7%84/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD-%EC%84%9C%EC%9A%B8%EC%9D%98-%EA%B0%80%EC%9D%84-%EB%82%A8%EC%82%B0%EC%97%90%EC%84%9C.jpg?s=2048x2048&w=is&k=20&c=Beh_qgbFD0wOrBYbygLvwzu24hzGbCouCnqrqkKH7mE=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* gnb */
+.wrap .container.menu_gnb-wrap {
+    height: 70px;
+}
+
+.wrap .container.menu_gnb-wrap .inner.menu_gnb {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+    color: white;
+}
+
+.wrap .container.menu_gnb-wrap .inner.menu_gnb .menu_items {
+    display: flex;
+    align-items: center;
+    
+}
+
+.wrap .container.menu_gnb-wrap .inner.menu_gnb .menu_items .menu_item{
+    margin-right: 20px;
+    text-align: center;
+}
+
+.wrap .container.menu_gnb-wrap .inner.menu_gnb .menu_items .menu_item:hover{
+    text-decoration: underline;
+}
+/* main*/
+.wrap .container .inner {
+    display: flex;
+    width: 600px;
+}
+
+.wrap .container .inner.main {
+    display: flex;
+
+}
+
+
+.wrap .container .inner.main .left {
+    flex: 2;
+    background-color: lightskyblue;
+}
+
+.wrap .container .inner.main .right {
+    display: flex;
+    flex: 8;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: lightcyan;
+    padding: 20px 0;
+}
+/* main 양식*/
+
+
+
+.wrap .container .inner.main .right .join_form-wrap .title {
+    text-align: center;
+    letter-spacing: 0.5em;
+    margin: 10px;
+}
+
+.wrap .container .inner.main .right .join_form-wrap .join_form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: #fff;
+    padding: 10px;
+
+}
+
+.wrap .container .inner.main .right .join_form-wrap .join_form>* {
+    margin: 3px 0;
+}
+
+.wrap .container .inner.main .right .join_form-wrap .join_form .gender-wrap,
+.wrap .container .inner.main .right .join_form-wrap .join_form .hobby-wrap {
+    display: flex;
+}
+
+.wrap .container .inner.main .right .join_form-wrap .join_form [type='submit'] {
+    background-color: green;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px 0;
+    border: 0;
+}
+
+
+/* footer */
+.wrap .container .inner.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    color: #fff;
+    font-weight: bold;
+    background-color: #efefef;
+}

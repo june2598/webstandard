@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            outline:1px solid red;
+                }
+                p{
+                  
+                    border: 10px solid blue;
+                    padding: 10px;
+                   width: 00px;
+                    height: 50px;
+                    /*background-color: yellow; */
+                } 
+                span.c1{
+                 
+                    border: 10px solid blue;
+                    padding: 10px;
+                    /* 인라인 레벨의 엘리먼트는 크기를 가질수없다.*/
+                    width: 200px;
+                    height: 50px;
+                    background-color: yellow;
+                }
+                span.c2{
+                 display:inline-block;
+                 border: 10px solid blue;
+                 padding: 10px;
+                 /* 인라인 레벨의 엘리먼트는 크기를 가질수없다.*/
+                 width: 200px;
+                 height: 50px;
+                 background-color: yellowgreen;
+             }
+    </style>
+</head>
+<body>
+    <!-- block level -->
+    <p>kh인재교육원</p>
+    <p>kh인재교육원2</p>
+    <!-- inline level -->
+    <span class="c1">kh인재교육원1</span>
+    <span class="c1">kh인재교육원2</span>
+
+    
+    <!--inline-block level -->
+    <span class="c2">kh인재교육원1</span>
+    <span class="c2">kh인재교육원2</span>
+</body>
+</html>

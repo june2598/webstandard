@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+*{
+    /* outline:1px solid red; */
+
+}
+body{
+    background-color: skyblue;
+    margin: 10px;
+    font-size: 11px;
+    font-weight: bold;
+}
+main{
+    
+    padding: 20px;
+    background-color: white;
+}
+span{
+    display: block;
+}
+h1{
+
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+div>select{
+    display: block;
+}
+.label1{
+    display: block;
+}
+.label2{
+    display: inline;
+}
+.input1{
+    width: 100% ;
+}
+.mybtn{
+
+    margin: 15px auto;
+    display: block;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    letter-spacing: 5px;
+
+}
+

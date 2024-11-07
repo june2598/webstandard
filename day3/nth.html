@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:nth-child(3){
+            background-color: yellow;
+        }
+        li:nth-last-child(3){
+            background-color: pink;
+        }
+        li:nth-of-type(2){
+            background-color: violet;
+        } 
+        li:nth-last-of-type(2){
+            background-color: aqua;
+        }
+        li:first-child{
+            background-color: gray;
+        }
+        li:first-of-type{
+            background-color: blue;
+        }
+        li:last-child{
+            background-color: brown;
+        }
+        li:last-of-type{
+            background-color: midnightblue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--:nth-child(n),      :nth-last-child(n)
+        :nth-of-type(n),    :nth-last-of-type(n)
+        :first-child(n),    :first-last-child(n)
+    -->
+
+    <ul>
+        <p>item0</p>
+        <li>item1</li>
+        <li>item2</li>
+        <p>item2_1</p>
+        <li>item3</li>
+    </ul>
+</body>
+</html>

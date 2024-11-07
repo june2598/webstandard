@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div id="msg"></div>
+        <div><label for="pname">상품명</label><input type="text" name="pname" id="pname"></div>
+        <div><label for="price">가격</label><input type="text" name="price" id="price"></div>
+        <div><label for="quantity">수량</label><input type="text" name="quantity" id="quantity"></div>
+        <div><button type="button" id="addBtn">등록</button></div>
+    </form>
+    <script>
+        addBtn.addEventListener('click', e => {
+            const payLoad =
+                {
+                "pname": pname.value,
+                "quantity": quantity.value,
+                "price": price.value
+                };
+                console.log(payLoad);
+            addProduct(payLoad);
+        }, false);
+        async function addProduct(payLoad) {
+            const url = `http://localhost:9080/api/products`//요청 url
+            try {
+                const res = await fetch(url, {              //첫번쨰 객체 : url, 두번째 : 객체리터럴
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payLoad)           
+                    //JSON.stringify(js객체) : js객체 => json 포맷 문자열로 변환해줌  
+                    //<=> JSON.parse(json포맷 문자열) : json포맷 문자열 => js객체 (이미 문자열 형태의 JSON 데이터를 동기적으로 JavaScript 객체로 변환.)
+                }
+                );
+                if (!res.ok) {                                  //ok : 응답코드가 200번
+                    throw new Error(`응답오류:${res.status}`);
+                }
+                const json = await res.json();      //Fetch API의 응답에서 JSON 데이터를 비동기적으로 추출하고 JavaScript 객체로 변환.
+                console.log(json);
+                if(json.header.rtcd == '00'){
+                  msg.textContent = `상품번호 ${json.body.productId} 번으로 등록되었습니다.`;
+                }
+            } catch (err) {
+                console.error(err.message);     //응답오류:${res.status}
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calculator{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+          
+        }
+        #result{
+            width: 100%;
+            box-sizing: border-box;     /* border로 인해 삐져나온 부분을 border-box처리로 깔끔하게 정리*/
+            text-align: end;
+        }
+        .calculator .btns{
+            display: grid;
+            /* grid-template-columns: 200px 200px 500px; */
+            /* grid-template-columns: 1fr 1fr 1fr; viewport 기준 1:1:1로*/
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 30px);
+            /* grid-template-columns: 200px 1fr; */
+            /* grid-template-columns: 100px 200px auto; */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+    </style>
+    <script defer src="./calculator.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="calculator">
+            <div><input type="text" id="result" readonly></div>
+            <div class="btns">
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">/</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">*</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">-</button>
+                <button class="btn">0</button>
+                <button class="btn">AC</button>
+                <button class="btn">+</button>
+                <button class="btn">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

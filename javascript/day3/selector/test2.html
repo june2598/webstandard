@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3 <button>클릭</button></li>
+        </ul>
+    </div>
+
+    <script>
+      const wrapEle = document.getElementById('wrap');
+      console.log(wrapEle);
+      const btnEle = wrapEle.querySelector('button');
+      console.log(btnEle);
+      const ulEle = btnEle.closest('ul');
+      console.log(ulEle);
+      btnEle.addEventListener('click',f);
+      
+    //   function f(){
+    //     btnEle.closest('ul').style.backgroundColor='yellow';
+    //   }
+
+//   btnEle.addEventListener(
+//     'click',
+//   ()=>btnEle.closest('ul').style.backgroundColor='yellow');
+
+//    const f = () => btnEle.closest('ul').style.backgroundColor='yellow';
+
+
+    </script>
+</body>
+
+</html>

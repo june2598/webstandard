@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*인접 선택자 */
+        /* + : 형제 엘리먼트중 바로 다음에 오는 엘리먼트 */
+        html body p + div{
+            background-color: yellow;
+        }
+
+        /* ~ : 형제 엘리먼트중 다음에 오는 모든 엘리먼트 */
+        html body p ~ div{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>item1</div>
+    <p>item2</p>
+    <div>item3</div>
+    <div>item4</div>
+    <div>item4</div>
+    
+</body>
+</html>

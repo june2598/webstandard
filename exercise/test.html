@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            outline: 1px solid red;
+        }
+      body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      body>content1>header>item2{
+        
+        display: flex;
+        justify-content: center;
+        background-color: violet;
+      }
+      body>content1>nav{
+        display: flex;
+        justify-content: center;
+        background-color: fuchsia;
+      }
+      body>content1>cont{
+        display: flex;
+        justify-content: center;
+      }
+
+      body>content1>cont>content{
+        display: flex;
+        background-color: gray;
+      }
+      body>content1>cont>sidebanner{
+        display: flex;
+        background-color: yellowgreen;
+      }
+      body>content1>cont>sidemenu{
+        display: flex;
+        background-color: green;
+      }
+      body>content1>footermenu{
+        display: flex;
+        justify-content: center;
+        background-color: blueviolet;
+      }
+      body>content1>footer{
+        display: flex;
+        justify-content: center;
+        background-color: lightslategray;
+      }
+
+    </style>
+</head>
+<body>
+<left>
+
+        <header>
+           <item2> Header </item2>
+        </header>
+        <nav>
+            Nav
+        </nav>
+        <cont>
+            <content>
+                Content
+            </content>
+            <sidebanner>
+                Sidebanner
+            </sidebanner>
+            <sidemenu>
+                Sidemenu
+            </sidemenu>
+        </cont>
+        <footermenu>
+            Footer Menu
+        </footermenu>
+        <footer>
+            Footer
+        </footer>
+     </content1>
+     <right>
+     </right>
+        
+</body>
+</html>

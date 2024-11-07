@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+* {
+    /* outline: 1px solid red; */
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+.wrap .footer {
+    text-transform: uppercase;
+}
+
+.wrap .footer .footer_top,
+.wrap .footer .footer_contents,
+.wrap .footer .footer_icons,
+.wrap .footer .footer_copyright {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+
+.wrap .footer .footer_top {
+    border-bottom: 2px solid #ccc;
+}
+
+.wrap .footer .footer_contents .title {
+    font-weight: bold;
+    color: #111;
+    padding-bottom: 5px;
+}
+
+.wrap .footer .footer_contents .footer_content-1,
+.wrap .footer .footer_contents .footer_content-2,
+.wrap .footer .footer_contents .footer_content-3 {
+    margin-right: 30px;
+}
+
+
+.wrap .footer .footer_contents .footer_content-2,
+.wrap .footer .footer_contents .footer_content-3,
+.wrap .footer .footer_contents .footer_content-4 {
+    line-height:2em;
+}
+
+.wrap .footer .footer_contents .footer_content-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 120px;
+    background-color: rgb(218, 69, 69);
+    color: #eceaea;
+}
+
+.wrap .footer .footer_contents .footer_content-2 .text-color01 {
+    color: violet;
+    font-weight: bold;
+
+}
+
+.wrap .footer .footer_contents .footer_content-3 .tel {
+    font-size: 1.8rem;
+    color: #111;
+    padding: 5px 0px;
+}
+
+.wrap .footer .footer_contents .footer_content-3 .tel .material-symbols-outlined {
+    margin-right: 10px;
+}
+
+.wrap .footer .footer_contents .footer_content-3 .account {
+    color: rgb(112, 141, 223);
+    font-weight: bold;
+}
+
+
+.wrap .footer .footer_contents .footer_content-4 .highlight-02{
+    color: #efefef;
+    background-color: #00f;
+}
+.wrap .footer .footer_contents .footer_content-4 .highlight-03{
+    color: #efefef;
+    background-color: #111;
+} 
+
+.wrap .footer .footer_icons * {
+    margin-right: 10px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 600,
+        'GRAD' 200,
+        'opsz' 20
+}
+
+
+
+.wrap .footer>.footer_copyright {
+    font-size: 0.8rem;
+    color: #777;
+
+}
+
+.wrap .footer>.footer_copyright>.highlight-01 {
+
+    background-color: rgb(189, 186, 186);
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        try{
+            //오류가 예상되는 코드
+            const arr = [1,2,3];
+            console.log(arr[3]);
+            console.log (eval('3*/2'));
+        }catch(err){
+            //try절에 오류가 발생됐을때 실행되는 코드
+            console.dir(err);
+            console.log('오류발생');
+        }finally{
+            //try절에 오류발생 유무에 상관없이 무조건 실행
+            console.log('try 절에 오류발생 유무에상관없이 무조건 실행')
+
+        }
+        console.log('hi');
+    </script>
+</body>
+</html>

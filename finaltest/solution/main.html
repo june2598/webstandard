@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>main 화면</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="container menu_top-wrap">
+
+            <div class="inner menu_top">
+                <ul class="menu_items">
+                    <li class="menu_item"><a href="#">로그인</a></li>
+                    <li class="menu_item"><span>|</span></li>
+                    <li class="menu_item"><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="container banner-wrap">
+
+            <div class="inner banner">
+
+            </div>
+        </div>
+        <div class="container menu_gnb-wrap">
+            <div class="inner menu_gnb">
+                <ul class="menu_items">
+                    <li class="menu_item"><a href="#">웹표준</a></li>
+                    <li class="menu_item"><a href="#">자바</a></li>
+                    <li class="menu_item"><a href="#">안드로이드</a></li>
+                    <li class="menu_item"><a href="#">데이터베이스</a></li>
+                    <li class="menu_item"><a href="#">스프링</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="container main-wrap">
+            <div class="inner main">
+                <div class="left"></div>
+                <div class="right">
+                    <div class="join_form-wrap">
+                        <h3 class="title">회원가입</h3>
+                        <form class="join_form">
+                            <label for="id">아이디</label>
+                            <input type="text" name="id" id="id">
+                            <label for="pwd">비밀번호</label>
+                            <input type="password" name="pwd" id="pwd">
+                            <label for="pwdchk">비밀번호확인</label>
+                            <input type="password" name="pwdchk" id="pwdchk">
+                            <label for="tel">전화번호</label>
+                            <input type="tel" name="tel" id="tel">
+                            <label for="nickname">별칭</label>
+                            <input type="text" name="nickname" id="nickname">
+                            <label for="region">지역</label>
+                            <select name="region" id="region">
+                                <option value="">== 선택 ==</option>
+                                <option value="서울">서울</option>
+                                <option value="부산">부산</option>
+                                <option value="대전">대전</option>
+                                <option value="대구">대구</option>
+                                <option value="울산">울산</option>
+                            </select>
+                            <label for="">성별</label>
+                            <div class="gender-wrap">
+                                <input type="radio" name="gender" id="male" value="male">
+                                <label for="male">남자</label>
+                                <input type="radio" name="gender" id="female" value="female">
+                                <label for="female">여자</label>
+                            </div>
+                            <label for="hobby">취미</label>
+                            <div class="hobby-wrap">
+                                <input type="checkbox" name="reading" id="reading" value="reading">
+                                <label for="reading">독서</label>
+                                <input type="checkbox" name="music" id="music" value="music">
+                                <label for="music">음악감상</label>
+                                <input type="checkbox" name="exercise" id="exercise" value="exercise">
+                                <label for="exercise">운동</label>
+                                <input type="checkbox" name="game" id="game" value="game">
+                                <label for="game">게임</label>
+                            </div>
+                            <label for="birth">생년월일</label>
+                            <input type="date" name="birth" id="birth">
+                            <input type="submit" value="회원가입">
+                            <!--<input type="reset" value="취소"> -->
+                            <!-- <button type="submit">회원가입</button>
+                        <button type="reset">취소</button> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-wrap">
+
+            <div class="inner footer">copyright by gildong hong. all rights reserved.
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

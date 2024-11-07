@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNB메뉴</title>
+    <style>
+        *{
+            outline: 1px solid red;
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            
+            /* display: flex;
+            width: 800px;
+            background-color: yellow;
+            justify-content: center; */
+        }
+        nav ul{
+            list-style-type: none; /*불릿제거*/
+            display: flex;
+            width: 800px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* flex-direction: row;
+            flex-wrap: nowrap; */
+            
+           
+            
+        }
+        nav ul li{
+            flex-grow: 1;
+            min-width: 150px;
+            /* flex-shrink: 0; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+      
+    </ul>
+</nav>
+</body>
+</html>

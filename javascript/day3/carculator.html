@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div><input type="text" id="value1"> + <input type="text" id="value2"> = <input type="text" id="result"></div>
+    <div><button>계산</button></div>
+
+    <script>
+        const btnEle = document.querySelector('button');
+        btnEle.addEventListener('click', function () {
+            const input1Ele = parseInt(document.getElementById('value1').value);
+            const input2Ele = parseInt(document.getElementById('value2').value);
+            const sum = input1Ele + input2Ele;
+            document.getElementById('result').value = sum;
+        });
+    </script>
+</body>
+
+</html>
