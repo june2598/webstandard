@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .errmsg {
+            font-size: 0.8rem;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>댓글</h3>
+    <div id="inputWrap"><input type="text" name="" id="reply-input"><button id="submit-button">등록</button></div>
+    <ul id="reply"></ul>
+    <script>
+        const replyInput = document.getElementById('reply-input');
+        const submitButton = document.getElementById('submit-button');
+        const replyList = document.getElementById('reply');
+        let errdiv;
+
+        submitButton.addEventListener('click', e => {       //등록 버튼 이벤트
+            const inputValue = replyInput.value;            //댓글입력값을 가져옴
+            if (inputValue === '') {                           //댓글란이 공백인경우
+                if (!errdiv) {                                //에러메시지가 기존에 없었다면
+                    errdiv = document.createElement('div'); //에러메시지 삽입용 div 생성
+                    errdiv.className = "errmsg";
+                    errdiv.textContent = '댓글을 입력해주세요.';    //경고 메시지 하단에 출력
+                    inputWrap.appendChild(errdiv);
+                }
+                return;
+            } else if (errdiv) {
+                inputWrap.removeChild(errdiv);
+                errdiv = null;
+            }
+            let li = document.createElement('li');          //li 요소 만들기
+            li.textContent = inputValue;                    //li의 textContent에 입력한 댓글을 주입
+
+            const deleteButton = document.createElement('button');// 버튼생성
+            deleteButton.textContent = '삭제';      //'삭제'버튼
+            deleteButton.addEventListener('click', e => {       //삭제 이벤트
+                if (!confirm('삭제하시겠습니까?')) return;           //삭제 여부 확인요청
+                replyList.removeChild(e.target.closest('li')); // 댓글 삭제, li의 위치를 명확하게 타게팅(타겟에서 가장 가까운 부모)
+            });
+
+            li.appendChild(deleteButton); // 삭제 버튼을 li(댓글)에 추가
+            replyList.appendChild(li);    // 삭제버튼이 추가된 댓글 li를 ul 안에 추가
+            replyInput.value = ''; // 입력 필드 비우기
+        }
+            , false);
+    </script>
+</body>
+
+</html>

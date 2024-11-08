@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #reply {
+            outline: 1px solid red;
+        }
+
+        textarea {
+            font-weight: 600;
+        }
+
+        .errmsg {
+            font-size: 0.8rem;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>댓글</h3>
+    <div id="textareaWrap"><textarea cols="50" rows="4" type="text" name="" id="comment"></textarea><button
+            id="btnAdd">등록</button></div>
+    <ul id="reply"></ul>
+    <script>
+        let errdiv;
+        reply.addEventListener('click', e => {
+            if (e.target.tagName != 'BUTTON') return; //tagName : 항상 대문자로 작성
+            console.log(e.target);                  //이벤트가 발생한 요소
+            console.log(e.currentTarget);            //이벤트 핸들러(e)가 등록된 요소 - reply
+
+            if (e.target.classList.contains('modifyBtn')) {
+                console.log('수정버튼 클릭');
+                const textOfReadMode = e.target.closest('li').querySelector('span').textContent;
+                const $li = createLiModifyMode(textOfReadMode);
+                reply.replaceChild($li, e.target.closest('li')); //replaceChild(new,old);
+
+            } else if (e.target.classList.contains('delBtn')) {
+                console.log('삭제버튼 클릭');
+                if (!confirm('삭제하시겠습니까?')) return;
+                reply.removeChild(e.target.closest('li'));  //e.target에서 가장 가까운 li
+
+            } else if (e.target.classList.contains('saveBtn')) {
+                console.log('저장버튼 클릭');
+                const modifiedText = e.target.closest('li').querySelector('textarea').value;
+                const $li = createLiReadMode(modifiedText);
+                reply.replaceChild($li, e.target.closest('li'));
+
+            } else if (e.target.classList.contains('cancelBtn')) {
+                console.log('취소버튼 클릭');
+                const initialText = e.target.closest('li').querySelector('textarea').getAttribute('data-initial');
+                const $li = createLiReadMode(initialText);
+                reply.replaceChild($li, e.target.closest('li'));
+                // const initialText = e.target.closest('li').querySelector('textarea').getAttribute('value');  //취소버튼을 눌렀을때는 value로 불러오면 안되고 getAttribute로 불러와야함(초기값)
+                // const $li = createLiReadMode(initialText);
+                // reply.replaceChild($li, e.target.closest('li'));
+            }
+        }, false);
+        btnAdd.addEventListener('click', e => {
+            //유효성체크 (textarea가 비었는지)
+            if (comment.value === '') {                         //댓글란이 공백인경우
+                if (!errdiv) {                                  //에러메시지가 기존에 없었다면
+                    errdiv = document.createElement('div');     //에러메시지 삽입용 div 생성
+                    errdiv.className = "errmsg";
+                    errdiv.textContent = '댓글을 입력해주세요.';  //경고 메시지 하단에 출력
+                    textareaWrap.appendChild(errdiv);
+                }
+                return;
+            } else if (errdiv) {                                //댓글 입력란이 비어있지 않은 경우, 만약 에러 메시지가 이미 표시되고 있다면 이를제거 
+                textareaWrap.removeChild(errdiv);               //초기화
+                errdiv = null;
+            }
+
+            const $li = createLiReadMode(comment.value);
+            reply.appendChild($li);
+            comment.value = '';
+        }, false);
+
+        comment.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault(); // enter의 원래 기능(줄바꿈)방지
+            btnAdd.click();
+        }
+    }, false);
+
+        //읽기 모드 : li 반환
+        function createLiReadMode(text) {
+            const $li = document.createElement('li');
+            $li.innerHTML = `<span>${text}</span><span><button class="btn modifyBtn">수정</button><button class="btn delBtn">삭제</button></span>`
+            return $li;
+        }
+
+        //수정 모드 : li 반환
+        function createLiModifyMode(text) {
+            const $li = document.createElement('li');
+            //textarea의 초기값을 가져오려면, textarea의 value 속성이 아니라, HTML의 value 속성을 이용해야 합니다.
+            //하지만 textarea에는 value 속성이 없기 때문에, 초기값을 저장할 수 있는 방법이 필요합니다.
+            // 수정 모드로 전환할 때, 초기값을 data-* 속성에 저장해두는 방법을 사용할 수 있습니다. 
+            // 예를 들어, data-initial이라는 사용자 정의 속성을 추가하여 초기값을 저장할 수 있습니다.
+            $li.innerHTML = `<textarea cols="50" rows="3" data-initial="${text}">${text}</textarea><button class="btn saveBtn">저장</button><button class="btn cancelBtn">취소</button>`;
+            return $li;
+        }
+
+
+    </script>
+</body>
+
+</html>

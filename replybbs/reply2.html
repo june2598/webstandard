@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>댓글</h3>
+    <div><input type="text" name="" id="comment"><button id="btnAdd">등록</button></div>
+    <ul id="reply"></ul>
+    <script>
+        btnAdd.addEventListener('click',e=>{
+            console.log(e.target);
+            const $li = document.createElement('li');   //<li></li>
+            $li.textContent = comment.value;            //<li>댓글</li>
+
+            const $delBtn = document.createElement('button');
+            $delBtn.textContent='삭제';
+            $li.appendChild($delBtn);
+
+            $delBtn.addEventListener('click',e=>{
+                reply.removeChild(e.target.closest('li'));//가장 가까이에있는 부모 li를 삭제
+            })
+            reply.appendChild($li);
+            comment.value='';
+
+
+
+        },false);
+    </script>
+</body>
+</html>
