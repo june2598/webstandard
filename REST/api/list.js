@@ -13,9 +13,12 @@ async function list(url) {
     }
 
     const { header, body, totalCnt } = await res.json();      //구조분해 문법
-    console.log(header, body, totalCnt);
+    // console.log(header, body, totalCnt);
     if (header.rtcd == '00') {
         console.log(`상품목록 조회완료`);
+        body.forEach(product=>console.log(product));
+    }else if(header.rtcd =='01'){
+        console.log(header.rtmsg);
     }
 } catch (err) {
     console.log(err.message);

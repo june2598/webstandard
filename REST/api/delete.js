@@ -1,4 +1,4 @@
-async function deleteProduct(url, pid){
+async function deleteProduct(url){
 
     try{
         const res = await fetch(url, {
@@ -16,6 +16,8 @@ async function deleteProduct(url, pid){
         console.log(header,body,totalCnt);
         if (header.rtcd =='00'){
             console.log(`삭제된 상품번호 : ${pid}`);
+        }else if(header.rtcd =='01'){
+            console.log('삭제하고자 하는 상품이 존재하지 않습니다.');
         }
     }catch(err){
         console.log(err.message);
@@ -23,4 +25,4 @@ async function deleteProduct(url, pid){
 }
 const pid = 382;
 const url = `http://localhost:9080/api/products/${pid}`;
-deleteProduct(url,pid);
+deleteProduct(url);

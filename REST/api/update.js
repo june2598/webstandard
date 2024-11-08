@@ -1,4 +1,4 @@
-async function update(url, pid, payload) {
+async function update(url, payload) {
     try{
         const res = await fetch(url, {
             method:'PATCH',
@@ -15,7 +15,9 @@ async function update(url, pid, payload) {
         const {header,body,totalCnt} = await res.json();      //구조분해 문법
         console.log(header,body,totalCnt);
         if (header.rtcd == '00') {
-            console.log(`수정된 상품번호 : ${body.productId}`);
+            console.log(`수정된 상품상세 : ${body}`);
+        }else if(header.rtcd =='01'){
+            console.log('수정하고자 하는 상품이 존재하지 않습니다.');
         }
     }catch(err){
         console.log(err.message);
@@ -28,4 +30,4 @@ const payload = {
     "quantity": "1",
     "price": "35000"
 };
-update(url,pid,payload);
+update(url,payload);
