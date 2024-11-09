@@ -98,10 +98,10 @@
         //수정 모드 : li 반환
         function createLiModifyMode(text) {
             const $li = document.createElement('li');
-            //textarea의 초기값을 가져오려면, textarea의 value 속성이 아니라, HTML의 value 속성을 이용해야 합니다.
-            //하지만 textarea에는 value 속성이 없기 때문에, 초기값을 저장할 수 있는 방법이 필요합니다.
-            // 수정 모드로 전환할 때, 초기값을 data-* 속성에 저장해두는 방법을 사용할 수 있습니다. 
-            // 예를 들어, data-initial이라는 사용자 정의 속성을 추가하여 초기값을 저장할 수 있습니다.
+            //textarea의 초기값을 가져오려면, textarea의 value 속성이 아니라, HTML의 value 속성을 이용해야 한다.
+            //하지만 textarea에는 value 속성이 없기 때문에, 초기값을 저장할 수 있는 방법이 필요.
+            // 수정 모드로 전환할 때, 초기값을 data-* 속성에 저장해두는 방법을 사용할 수 있다. 
+            // 예를 들어, data-initial이라는 사용자 정의 속성을 추가하여 초기값을 저장할 수 있다.
             $li.innerHTML = `<textarea cols="50" rows="3" data-initial="${text}">${text}</textarea><button class="btn saveBtn">저장</button><button class="btn cancelBtn">취소</button>`;
             return $li;
         }

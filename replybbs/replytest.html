@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 댓글 연습</title>
+</head>
+
+<body>
+    <div class="reply-container">
+        <div class="reply-title">
+            <h3>댓글</h3>
+        </div>
+        <div class="comment"><textarea cols="50" rows="4" name="" id="comment"></textarea>
+        </div>
+        <div class="btnAdd"><button id="btnAdd">등록</button></div>
+        <ul id="replyWrap">
+        </ul>
+    </div>
+
+
+    <script>
+        const $btnAdd = document.getElementById("btnAdd");
+        const $comment = document.getElementById("comment");
+        const $reply = document.getElementById("replyWrap");
+        $reply.addEventListener('click', e=> {
+            if(e.target.tagName !='BUTTON') return;
+            console.log(e.target);
+            console.log(e.currentTarget);
+            if(e.target.classList.contains('modifyBtn')){
+                console.log('수정버튼 클릭');
+                const textOfReadMode = e.target.closest('li').querySelector('span').textContent; //수정전 댓글내용 저장
+                const $li = createLiModifyMode(textOfReadMode); //수정전 댓글내용을 초기내용으로 하는 수정폼
+                $reply.replaceChild($li,e.target.closest('li'));
+            }else if(e.target.classList.contains('delBtn')){
+                console.log('삭제버튼 클릭');
+                if(!confirm('삭제하시겠습니까?')) return;
+                $reply.removeChild(e.target.closest('li'));
+            }else if(e.target.classList.contains('saveBtn')){
+                console.log('저장버튼 클릭');
+                const modifiedContent = e.target.closest('li').querySelector('textarea').value;
+                const $li = createLiReadMode(modifiedContent);
+                $reply.replaceChild($li, e.target.closest('li'));
+            }else if(e.target.classList.contains('cancelBtn')){
+                console.log('취소버튼 클릭');
+                const initialContent = e.target.closest('li').querySelector('textarea').getAttribute('data-initial');
+                const $li = createLiReadMode(initialContent);
+                $reply.replaceChild($li,e.target.closest('li'));
+            }
+        }, false);
+        
+        $btnAdd.addEventListener('click', e => {
+            const $li = createLiReadMode(comment.value);
+            $reply.appendChild($li);
+            comment.value = '';
+        }, false);
+
+
+        function createLiReadMode(text) {
+            const $li = document.createElement('li');
+            $li.innerHTML = `<span>${text}</span><span><button class="btn modifyBtn">수정</button><button class="btn delBtn">삭제</button></span>`;
+            return $li;
+        }
+
+        function createLiModifyMode(text) {
+            const $li = document.createElement('li');
+            $li.innerHTML = `<textarea cols="50" rows="3" data-initial="${text}">${text}</textarea><button class="btn saveBtn">저장</button><button class="btn cancelBtn">취소</button>`;
+            return $li;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
