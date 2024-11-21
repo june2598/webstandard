@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>마커 표시하기</title>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xnzg5it444&callback=initMap"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map" style="width:100vw; height:100vh;"></div>
+
+<script>
+    
+var map = new naver.maps.Map('map', {
+    center: new naver.maps.LatLng(35.535081, 129.310899),
+    zoom: 15
+});
+
+var marker = new naver.maps.Marker({
+    position: new naver.maps.LatLng(35.535081, 129.310899),
+    map: map
+});
+
+  
+
+</script>
+</body>
+</html>
+
