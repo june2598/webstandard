@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box::before {
+      color: red;
+      content : '오전';
+      font-size: 2rem;
+    }
+    .box::after {
+      color: blue;
+      content : '시'
+    }
+
+    .box.box6::before{
+      content: '';
+      border: 10px solid black;
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: red;
+      
+    }
+
+    .box.box7 {
+      position: relative;
+      display: inline;
+      /* display: inline-flex;
+      justify-content: center; */
+    }
+
+    .box.box:hover::before{
+      display: inline-block;     /* 호버 하면 display: none에서 display: inline-block으로 */
+    }
+
+    .box.box7::before{
+      position: absolute;
+      content:'';
+      display: none;
+      /* width: 100px;
+      height: 100px; */
+      border: 10px solid transparent;
+      /* border-top-color: white;
+      border-right-color: white; */
+      border-bottom-color: red;
+      /* border-left-color: white; */
+      bottom: -10px;
+      left:50%;
+      transform:translateX(-50%);   /* x축방향으로 폭의 50%만큼 이동 */
+
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="box box1">10</div>
+  <div class="box box2">11</div>
+  <div class="box box3">12</div>
+  <div class="box box4">13</div>
+  <div class="box box5">14</div>
+  <div class="box box6"></div>
+  <div class="box box7">KH인재교육원</div>
+</body>
+</html>

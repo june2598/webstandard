@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="pagination"></div>
+
+  <script>
+    class Pagination {
+      constructor(recordsPerPage, pagesPerPage) { 
+        this.totalRecords = 0;                      //총 레코드수
+        this.recordsPerPage = recordsPerPage;       //페이지당 레코드 수
+        this.pagesPerPage = pagesPerPage;           //페이지당 페이지 수
+        this.currentPage = 1;                       //현재 페이지
+        this.currentPageGroupStart = 1;             //현재 페이지의 시작페이지
+      }
+
+      getTotalRecords() {
+        return this.totalRecords;
+      }
+
+      getTotalPages(totalRecords) {
+        return Math.ceil(totalRecords / this.recordsPerPage);
+      }
+
+      displayNavigation(totalRecords) {
+        const totalPages = this.getTotalPages(totalRecords);
+        let pageNavigation = this.currentPageGroupStart > 1 ? '<button id="first">처음</button> <button id="prev">이전</button> ' : '';
+
+        for (let i = this.currentPageGroupStart; i < this.currentPageGroupStart + this.pagesPerPage && i <= totalPages; i++) {
+          if (i === this.currentPage) {
+            pageNavigation += `<button class="active" id="page${i}">${i}</button> `;
+          } else {
+            pageNavigation += `<button id="page${i}">${i}</button> `;
+          }
+        }
+
+        pageNavigation += this.currentPageGroupStart + this.pagesPerPage - 1 < totalPages ? '<button id="next">다음</button> <button id="last">끝</button>' : '';
+        return pageNavigation;
+      }
+
+      setCurrentPage(pageNumber) {
+        this.currentPage = pageNumber;
+      }
+
+      setNextPageGroup() {
+        this.currentPageGroupStart += this.pagesPerPage;
+      }
+
+      setPrevPageGroup() {
+        this.currentPageGroupStart -= this.pagesPerPage;
+        if (this.currentPageGroupStart < 1) {
+          this.currentPageGroupStart = 1;
+        }
+      }
+    }
+
+    function displayPagination() {
+      document.getElementById('pagination').innerHTML = pagination.displayNavigation(totalRecords);
+      for (let i = pagination.currentPageGroupStart; i < pagination.currentPageGroupStart + pagination.pagesPerPage && i <= pagination.getTotalPages(totalRecords); i++) {
+        document.getElementById(`page${i}`).addEventListener('click', function() {
+          pagination.setCurrentPage(i);
+          displayPagination();
+        });
+      }
+      if (document.getElementById('first')) {
+        document.getElementById('first').addEventListener('click', function() {
+          pagination.setCurrentPage(1);
+          pagination.currentPageGroupStart = 1;
+          displayPagination();
+        });
+      }
+      if (document.getElementById('prev')) {
+        document.getElementById('prev').addEventListener('click', function() {
+          if (pagination.currentPageGroupStart > 1) {
+            pagination.setPrevPageGroup();
+            pagination.setCurrentPage(pagination.currentPageGroupStart);
+            displayPagination();
+          }
+        });
+      }
+      if (document.getElementById('next')) {
+        document.getElementById('next').addEventListener('click', function() {
+          if (pagination.currentPageGroupStart + pagination.pagesPerPage - 1 < pagination.getTotalPages(totalRecords)) {
+            pagination.setNextPageGroup();
+            pagination.setCurrentPage(pagination.currentPageGroupStart);
+            displayPagination();
+          }
+        });
+      }
+      if (document.getElementById('last')) {
+        document.getElementById('last').addEventListener('click', function() {
+          const totalPages = pagination.getTotalPages(totalRecords);
+          pagination.currentPageGroupStart = totalPages - (totalPages % pagination.pagesPerPage) + 1;
+          pagination.setCurrentPage(totalPages);
+          displayPagination();
+        });
+      }
+    }
+    const pagination = new Pagination(10, 10);
+    const totalRecords = 215; // 총 레코드 수는 임의로 215으로 설정했습니다.    
+    displayPagination();
+  </script>
+</body>
+</html>
+

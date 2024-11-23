@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>간단한 지도 표시하기</title>
+    <script type="text/javascript"
+        src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xnzg5it444&callback=main"></script>
+    <script type="text/javascript"
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b2649a52bc76c20c5ac1e659ffa218ed&libraries=services,clusterer,drawing"></script>
+    <link rel="stylesheet" href="map.css">
+    <script defer src="map.js"></script>
+</head>
+
+<body>
+    <div class="map-wrap">
+        <div id="map" style="width:100vw; height:100vh;"></div>
+        <div id="search">
+            <label for="">검색어</label><input id="keyword" type="text"><button id="searchBtn">검색</button>
+        </div>
+    </div>
+</body>
+
+</html>
